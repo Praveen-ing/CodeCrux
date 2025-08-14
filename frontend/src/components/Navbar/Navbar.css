@@ -1,0 +1,126 @@
+.navbar-main {
+  background-color: #1f1f30; /* Slightly lighter than body for depth */
+  padding: 0.8rem 0;
+  border-bottom: 1px solid #303040;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navbar-container {
+  width: 90%;
+  max-width: 1300px; /* Wider for more links */
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.6rem;
+  font-weight: 700;
+  transition: color 0.2s ease;
+}
+
+.navbar-logo:hover {
+  color: #1abc9c; /* Accent color */
+}
+
+.navbar-logo span {
+  line-height: 1;
+}
+
+.navbar-links,
+.navbar-auth-links {
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* Consistent gap */
+}
+
+.navbar-links a,
+.navbar-auth-links a,
+.navbar-button {
+  color: #c0c0d0; /* Softer link color */
+  text-decoration: none;
+  padding: 0.5rem 0.8rem;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+  transition: color 0.2s ease, background-color 0.2s ease;
+}
+
+.navbar-links a:hover,
+.navbar-auth-links a:hover,
+.navbar-button:hover {
+  color: #ffffff;
+  background-color: #30304a; /* Subtle hover background */
+}
+
+.navbar-button {
+  border: none;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.9rem;
+}
+
+.navbar-button.login {
+  /* border: 1px solid #4e8cff; */
+  /* color: #4e8cff; */
+}
+.navbar-button.login:hover {
+  /* background-color: #4e8cff; */
+  /* color: #fff; */
+}
+
+.navbar-button.register {
+  background-color: #4e8cff;
+  color: #fff;
+}
+.navbar-button.register:hover {
+  background-color: #306fdc;
+}
+.navbar-button.logout {
+  background-color: #e74c3c; /* Red for logout */
+  color: #fff;
+}
+.navbar-button.logout:hover {
+  background-color: #c0392b;
+}
+
+.navbar-user-link {
+  font-weight: 600;
+  color: #1abc9c; /* Highlight username */
+}
+
+/* Basic responsive considerations for Navbar */
+@media (max-width: 850px) {
+  .navbar-links {
+    display: none; /* Hide main links, consider a hamburger menu for mobile */
+  }
+  .navbar-container {
+    /* Could allow logo and auth links to wrap if needed */
+  }
+}
+@media (max-width: 480px) {
+    .navbar-logo span {
+        display: none; /* Hide text part of logo on very small screens */
+    }
+    .navbar-auth-links {
+        gap: 0.5rem;
+    }
+    .navbar-button {
+        padding: 0.4rem 0.6rem;
+        font-size: 0.8rem;
+    }
+    .navbar-button svg {
+        display: none; /* Hide icons in buttons on very small screens to save space */
+    }
+}

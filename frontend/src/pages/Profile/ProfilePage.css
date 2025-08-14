@@ -1,0 +1,210 @@
+/* src/pages/Profile/ProfilePage.css */
+.profile-page-container {
+  /* Uses .container for max-width and basic padding from global styles */
+  padding-top: 2rem; /* Add some top padding if not covered by .container */
+  padding-bottom: 3rem;
+}
+
+.profile-page-container .page-title {
+  /* Uses global .page-title styles if defined, or define here */
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+.profile-details-card {
+  background-color: #1f1f30; /* Dark card background */
+  padding: 2rem;
+  border-radius: 12px;
+  border: 1px solid #303040;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  margin-bottom: 2rem;
+}
+
+.profile-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid #303040;
+}
+
+.profile-header h2 {
+  font-size: 1.5rem;
+  color: #ffffff;
+  margin: 0;
+}
+
+.edit-profile-btn {
+  padding: 0.5rem 1rem !important; /* Override global .btn if needed */
+  font-size: 0.9rem !important;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  /* Uses .btn and .btn-secondary from global styles */
+}
+
+.profile-info p {
+  font-size: 1rem;
+  color: #c0c0d0;
+  margin-bottom: 0.8rem;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  line-height: 1.6;
+}
+
+.profile-info p strong {
+  color: #e0e0e0;
+  font-weight: 600;
+  min-width: 120px; /* Align labels somewhat */
+  display: inline-flex; /* To allow gap with icon */
+  align-items: center;
+  gap: 0.6rem;
+}
+.profile-info p strong svg {
+  color: #1abc9c; /* Accent for icons */
+  flex-shrink: 0; /* Prevent icon from shrinking */
+}
+
+
+.profile-edit-form .form-group {
+  margin-bottom: 1.25rem;
+}
+
+.profile-edit-form .form-group label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #a0a0b0;
+  margin-bottom: 0.4rem;
+  font-weight: 500;
+}
+.profile-edit-form .form-group label svg {
+  color: #707080; /* Icon color in form labels */
+  flex-shrink: 0;
+}
+
+
+.profile-edit-form .form-input {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  background-color: #10101a;
+  border: 1px solid #303040;
+  border-radius: 6px;
+  color: #e0e0e0;
+  font-size: 1rem;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+.profile-edit-form .form-input:focus {
+  outline: none;
+  border-color: #4e8cff; /* Accent color for focus */
+  box-shadow: 0 0 0 2px rgba(78, 140, 255, 0.2);
+}
+.profile-edit-form .form-input:disabled {
+  background-color: #282838;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+.password-change-info {
+  font-size: 0.85rem;
+  color: #707080;
+  margin-bottom: 1rem;
+  font-style: italic;
+}
+
+.form-actions {
+  margin-top: 2rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: flex-end; /* Aligns buttons to the right */
+  flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+.form-actions .btn {
+  padding: 0.6rem 1.2rem !important;
+  font-size: 0.95rem !important;
+  min-width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.save-changes-btn {
+    /* Uses .btn-primary or specific styles from global .btn */
+    background-color: #1abc9c;
+    color: #10101a;
+}
+.save-changes-btn:hover:not(:disabled) {
+    background-color: #16a085;
+}
+.save-changes-btn:disabled {
+    background-color: #16a085a0; /* Muted when disabled */
+    cursor: not-allowed;
+}
+
+
+.cancel-edit-btn {
+  /* Uses .btn-secondary from global styles */
+   background-color: #3a3a5a;
+}
+.cancel-edit-btn:hover:not(:disabled) {
+    background-color: #4a4a6a;
+}
+.cancel-edit-btn:disabled {
+    background-color: #4a4a6aa0;
+    cursor: not-allowed;
+}
+
+/* Error and Success Messages */
+.error-message, .success-message {
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  margin-bottom: 1.5rem;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.error-message { /* Specific to local form errors */
+    border: 1px solid rgba(224, 72, 72, 0.3);
+    background-color: rgba(224, 72, 72, 0.1);
+    color: #e07171;
+}
+.error-message.global-error { /* For context errors or more prominent errors */
+    border: 1px solid rgba(224, 72, 72, 0.5);
+    background-color: rgba(224, 72, 72, 0.2);
+    color: #ff8a8a;
+}
+.success-message {
+  border: 1px solid rgba(40, 167, 69, 0.4);
+  background-color: rgba(40, 167, 69, 0.15);
+  color: #63dd7c; /* Brighter success green */
+}
+
+.spinner-icon {
+  animation: spin 1s linear infinite;
+}
+/* Ensure @keyframes spin is defined globally or in App.css */
+/* @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } } */
+
+/* Loading state for the whole page if needed (usually handled by ProtectedRoute or page itself) */
+.profile-page-container.loading-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100vh - 150px); /* Adjust based on navbar/footer */
+  color: #a0a0b0;
+}
+.profile-page-container.loading-state .spinner-icon {
+  color: #4e8cff; /* Accent color for spinner */
+  margin-bottom: 1rem;
+}

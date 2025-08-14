@@ -1,0 +1,95 @@
+/* frontend/src/pages/Contests/Contests.css */
+
+.contests-page-main .page-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.contests-page-main .page-title {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+}
+
+.search-container {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.search-icon {
+    position: absolute;
+    left: 1rem;
+    color: #8b87a3;
+    pointer-events: none; /* Allows clicking through the icon */
+}
+
+.search-input {
+    background-color: #1f1f30;
+    border: 1px solid #303040;
+    border-radius: 12px;
+    color: #ffffff;
+    padding: 0.75rem 1rem 0.75rem 3rem; /* Left padding for icon */
+    font-size: 1rem;
+    width: 300px;
+    transition: all 0.3s ease;
+}
+
+.search-input::placeholder {
+    color: #8b87a3;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.3);
+}
+
+.loading-state, .error-message, .no-contests {
+    text-align: center;
+    padding: 4rem 2rem;
+    margin-top: 2rem;
+    background-color: #1f1f30;
+    border: 1px dashed #303040;
+    border-radius: 16px;
+    color: #b0b0c0;
+}
+
+.loading-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+}
+
+.spinner-icon {
+    animation: spin 1.5s linear infinite;
+    margin-bottom: 1rem;
+    color: #6366f1;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+.contests-list-layout {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem; /* Space between each contest card */
+}
+
+@media (max-width: 768px) {
+    .contests-page-main .page-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .search-input {
+        width: 100%;
+    }
+}

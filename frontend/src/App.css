@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #10101a; /* Dark background */
+  color: #e0e0e0; /* Light default text color */
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+a {
+  color: #4e8cff; /* Accent color for links */
+  text-decoration: none;
+  transition: color 0.2s ease-in-out;
+}
+
+a:hover {
+  color: #6faaff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: #ffffff; /* Brighter headings */
+  margin-bottom: 0.75rem;
+  font-weight: 600;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.loading-message,
+.error-message {
+  text-align: center;
+  font-size: 1.2rem;
+  padding: 2rem;
+  border-radius: 8px;
+  margin: 2rem auto;
+}
+
+.loading-message {
+  color: #a0a0a0;
+}
+
+.error-message {
+  background-color: rgba(255, 82, 82, 0.1);
+  color: #ff5252;
+  border: 1px solid rgba(255, 82, 82, 0.3);
+}
+
+.btn {
+  display: inline-block;
+  padding: 0.6rem 1.2rem;
+  background-color: #4e8cff;
+  color: #fff;
+  border: none;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: background-color 0.2s ease-in-out, transform 0.1s ease;
+  cursor: pointer;
+  font-weight: 500;
+  text-align: center;
+}
+
+.btn:hover {
+  background-color: #306fdc;
+  transform: translateY(-1px);
+}
+
+.btn-secondary {
+    background-color: #3a3a5a;
+}
+.btn-secondary:hover {
+    background-color: #4a4a6a;
+}
+
+.btn-success {
+    background-color: #28a745;
+}
+.btn-success:hover {
+    background-color: #218838;
+}
+
+.page-title {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 2rem;
+  color: #ffffff;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+
+/* Utility for visually hidden text, useful for accessibility on icon-only buttons */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
+}
+
+/* Add or modify in App.css */
+.main-content-area {
+  flex-grow: 1;
+  padding-top: 70px; /* Adjust this based on your Navbar's actual height */
+  /* Add side padding if needed, or use a .container class within pages */
+}
+
+.main-content-full-page {
+  flex-grow: 1;
+  /* No top padding needed as Navbar is hidden */
+}
+
+.app-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}

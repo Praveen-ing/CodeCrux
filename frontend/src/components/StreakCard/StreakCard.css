@@ -1,0 +1,132 @@
+.streak-card-main {
+  background-color: #1f1f30;
+  border: 1px solid #303040;
+  padding: 1.5rem 2rem; /* More padding */
+  border-radius: 16px; /* More rounded */
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  text-align: center;
+  width: 100%;
+  max-width: 450px; /* Max width for better focus */
+  margin: 1rem auto; /* Centering */
+  transition: background-color 0.3s ease;
+}
+.streak-card-main.solved-challenge {
+    border-left: 6px solid #28a745; /* Green indicator for solved */
+}
+
+.streak-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px dashed #303040;
+}
+
+.streak-flame {
+  color: #707080; /* Greyed out when no streak */
+  transition: color 0.3s ease;
+}
+
+.streak-flame.active {
+  color: #ffc107; /* Gold for active streak */
+  filter: drop-shadow(0 0 5px #ffc107);
+}
+
+.streak-count-display {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.streak-count-display .count {
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  line-height: 1;
+}
+
+.streak-count-display .days-label {
+  font-size: 0.9rem;
+  color: #a0a0b0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.challenge-details {
+  margin-bottom: 1.5rem;
+}
+.challenge-details.general-challenge p {
+    font-size: 1.1rem;
+    color: #c0c0d0;
+    font-style: italic;
+}
+
+
+.challenge-details h4 {
+  font-size: 1rem;
+  color: #1abc9c; /* Accent color for "Today's Challenge" */
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+}
+
+.problem-title-streak {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #e0e0e0;
+  margin-bottom: 0.3rem;
+}
+
+.problem-platform-streak {
+  font-size: 0.9rem;
+  color: #a0a0b0;
+  margin-bottom: 1rem;
+}
+.problem-platform-streak strong {
+  color: #c0c0d0;
+}
+.problem-platform-streak .difficulty-badge { /* Re-use from ProblemCard.css or define here */
+  display: inline-block;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  margin-left: 0.5rem;
+  color: #fff;
+}
+
+
+.problem-link-streak {
+  display: inline-flex !important; /* Override .btn if needed */
+  width: auto; /* Let content define width */
+  margin: 0 auto 1rem auto; /* Center it */
+  font-size: 0.9rem !important;
+}
+
+.solve-button-streak {
+  width: 100%;
+  padding: 0.75rem 1.5rem !important; /* Larger button */
+  font-size: 1rem !important;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.solved-message-streak {
+  color: #28a745;
+  font-weight: 600;
+  font-size: 1.1rem;
+  margin-top: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.no-challenge-streak, .loading-challenge-streak {
+    color: #a0a0b0;
+    font-style: italic;
+    padding: 1rem 0;
+}

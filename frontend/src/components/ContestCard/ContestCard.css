@@ -1,0 +1,204 @@
+/* frontend/src/components/ContestCard/ContestCard.css */
+
+.contest-card {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    padding: 1.25rem 1.5rem;
+    background: linear-gradient(145deg, #212132, #1a1a2a);
+    border: 1px solid #303040;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+    transition: all 0.3s ease-out;
+    position: relative;
+    overflow: hidden;
+}
+
+.contest-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    border-radius: 16px;
+    border: 1px solid transparent;
+    background: radial-gradient(circle at var(--x) var(--y), rgba(124, 77, 255, 0.3), transparent 25%) border-box;
+    -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.contest-card:hover::before {
+    opacity: 1;
+}
+
+.contest-card:hover {
+    transform: translateY(-5px);
+    border-color: #404055;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* --- Platform Info Section (Left) --- */
+.platform-info {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 80px;
+    text-align: center;
+}
+
+.platform-icon {
+    /* FINALIZED SIZE: A balanced 36px */
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.contest-card:hover .platform-icon {
+    transform: scale(1.1);
+}
+
+.platform-icon-default {
+    color: #8b87a3;
+    width: 36px;
+    height: 36px;
+}
+.platform-name {
+    font-size: 0.8rem;
+    font-weight: 500;
+    color: #b0b0c0;
+    width: 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* --- Contest Details Section (Middle) --- */
+.contest-details {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.6rem;
+    min-width: 0;
+}
+
+.contest-title {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffffff;
+    margin: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.contest-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.25rem;
+    color: #8b87a3;
+    font-size: 0.9rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+.meta-item.link {
+    color: #8b87a3;
+    text-decoration: none;
+}
+.meta-item.link:hover {
+    color: #8183f5;
+}
+.meta-item.link.disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
+/* --- Actions Section (Right) --- */
+.contest-actions {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-left: auto;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* FINALIZED SIZE: 42px is a good, standard size */
+    width: 42px;
+    height: 42px;
+    background-color: rgba(255, 255, 255, 0.05);
+    border: 1px solid #303040;
+    border-radius: 12px;
+    color: #b0b0c0;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-btn svg {
+    /* FINALIZED SIZE: 20px icon inside a 42px button */
+    width: 20px;
+    height: 20px;
+}
+
+.action-btn:hover {
+    transform: scale(1.1);
+    border-color: #4f4f66;
+}
+
+.action-btn.calendar-btn:hover {
+    background-color: rgba(99, 102, 241, 0.15);
+    color: #8183f5;
+}
+
+.action-btn.favorite-btn:hover {
+    background-color: rgba(255, 193, 7, 0.15);
+    color: #ffc107;
+}
+
+.action-btn.favorite-btn.favorited {
+    background-color: #ffc107;
+    color: #1a1a2a;
+    border-color: #ffc107;
+}
+.action-btn.favorite-btn.favorited svg {
+    fill: #1a1a2a;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
+    .contest-card {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .platform-info {
+        flex-direction: row;
+        width: 100%;
+        justify-content: flex-start;
+    }
+    .contest-meta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.75rem;
+    }
+    .contest-actions {
+        width: 100%;
+        margin-top: 1rem;
+        padding-top: 1rem;
+        border-top: 1px solid #303040;
+        justify-content: flex-end;
+    }
+}

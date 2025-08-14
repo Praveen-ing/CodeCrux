@@ -1,0 +1,789 @@
+/* ============================================
+   PROBLEM LIST PAGE - CLEAN & ORGANIZED STYLES
+   ============================================ */
+
+/* ============================================
+   1. BASE LAYOUT & CONTAINER
+   ============================================ */
+
+.problem-list-page {
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+  color: #e0e0e0;
+  min-height: 100vh;
+}
+
+/* ============================================
+   2. HEADER SECTION
+   ============================================ */
+
+.problem-list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+  padding-bottom: 1rem;
+  border-bottom: 2px solid #3a3a5a;
+}
+
+.problem-list-header h1 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0;
+  letter-spacing: -0.5px;
+  line-height: 1.2;
+}
+
+.problem-count-info {
+  font-size: 1rem;
+  font-weight: 400;
+  color: #a0a0c0;
+  margin-left: 0.5rem;
+}
+
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.clear-filters-btn {
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(220, 53, 69, 0.3);
+}
+
+.clear-filters-btn:hover {
+  background: linear-gradient(135deg, #c82333, #a71e2a);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(220, 53, 69, 0.4);
+}
+
+.clear-filters-btn.secondary {
+  background: linear-gradient(135deg, #6c757d, #5a6268);
+  box-shadow: 0 2px 4px rgba(108, 117, 125, 0.3);
+}
+
+.clear-filters-btn.secondary:hover {
+  background: linear-gradient(135deg, #5a6268, #495057);
+  box-shadow: 0 4px 8px rgba(108, 117, 125, 0.4);
+}
+
+.toggle-filters-btn {
+  background: linear-gradient(135deg, #4a5568, #2d3748);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-filters-btn:hover {
+  background: linear-gradient(135deg, #2d3748, #1a1a2e);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* ============================================
+   3. FILTERS SECTION
+   ============================================ */
+
+.filters-container {
+  background: linear-gradient(135deg, #23233c, #1a1a2e);
+  padding: 2rem;
+  border-radius: 12px;
+  margin-bottom: 2rem;
+  border: 1px solid #3a3a5a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.filter-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.filter-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Search Filter Special Styling */
+.filter-group.search-filter {
+  flex-direction: row;
+  align-items: center;
+  background-color: #1a1a2e;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  grid-column: span 2;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+}
+
+.filter-group.search-filter:focus-within {
+  border-color: #4d96ff;
+}
+
+.filter-group.search-filter input {
+  flex-grow: 1;
+  background: transparent;
+  border: none;
+  color: white;
+  font-size: 1rem;
+  margin-left: 0.75rem;
+  font-weight: 400;
+}
+
+.filter-group.search-filter input:focus {
+  outline: none;
+}
+
+.filter-group.search-filter input::placeholder {
+  color: #718096;
+}
+
+.filter-group.search-filter svg {
+  color: #718096;
+  transition: color 0.3s ease;
+}
+
+.filter-group.search-filter:focus-within svg {
+  color: #4d96ff;
+}
+
+/* Form Elements */
+.filter-group label {
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: #a0a0c0;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filter-group select,
+.filter-group input[type="text"]:not(.search-filter input) {
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: 2px solid #4a5568;
+  background-color: #2d3748;
+  color: white;
+  font-size: 0.9rem;
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.filter-group select:focus,
+.filter-group input[type="text"]:not(.search-filter input):focus {
+  outline: none;
+  border-color: #4d96ff;
+  box-shadow: 0 0 0 3px rgba(77, 150, 255, 0.2);
+  transform: translateY(-1px);
+}
+
+/* Tags Filter */
+.tags-filter {
+  grid-column: span 2;
+}
+
+.tags-filter .tags-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 1rem;
+  background-color: #1a1a2e;
+  border-radius: 8px;
+  border: 1px solid #3a3a5a;
+}
+
+.tag-btn {
+  background-color: #4a5568;
+  color: #e0e0e0;
+  border: 2px solid transparent;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+}
+
+.tag-btn:hover {
+  background-color: #2d3748;
+  transform: translateY(-2px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.tag-btn.active {
+  background: linear-gradient(135deg, #4d96ff, #007bff);
+  color: white;
+  border-color: #4d96ff;
+  font-weight: 600;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(77, 150, 255, 0.3);
+}
+
+/* Filter Actions */
+.filter-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+/* Apply Filters Button */
+.apply-filters-btn {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  color: white;
+  padding: 1rem 2rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+.apply-filters-btn:hover {
+  background: linear-gradient(135deg, #0056b3, #004085);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(0, 123, 255, 0.4);
+}
+
+/* ============================================
+   4. LOADING, ERROR & EMPTY STATES
+   ============================================ */
+
+.loading-problems,
+.error-problems,
+.no-problems-found {
+  text-align: center;
+  padding: 3rem 2rem;
+  font-size: 1.1rem;
+  color: #a0a0c0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  background-color: #23233c;
+  border-radius: 12px;
+  border: 1px solid #3a3a5a;
+}
+
+.error-problems {
+  color: #ff6b6b;
+  border-color: #ff6b6b;
+}
+
+.no-problems-found h3 {
+  margin: 0;
+  color: #ffffff;
+  font-size: 1.5rem;
+}
+
+.no-problems-found p {
+  margin: 0;
+  font-weight: 500;
+}
+
+.spinner-icon {
+  animation: spin 1s linear infinite;
+  color: #4d96ff;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* ============================================
+   5. PROBLEMS LIST & TABLE
+   ============================================ */
+
+.problems-list-view {
+  width: 100%;
+  border: 1px solid #3a3a5a;
+  border-radius: 12px;
+  overflow: hidden;
+  background-color: #23233c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.problem-list-row {
+  display: grid;
+  grid-template-columns: 60px minmax(250px, 2.5fr) 1fr 1fr minmax(200px, 1.5fr) 120px;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #30304a;
+  gap: 1rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.problem-list-row:last-child {
+  border-bottom: none;
+}
+
+.problem-list-row:hover:not(.header-row) {
+  background-color: #2c2c4a;
+  transform: translateX(4px);
+}
+
+/* Header Row */
+.problem-list-row.header-row {
+  background: linear-gradient(135deg, #1a1a2e, #23233c);
+  color: #a0a0c0;
+  font-weight: 700;
+  font-size: 0.85rem;
+  padding: 0.75rem 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+/* Solved Row Styling */
+.problem-list-row.solved {
+  border-left: 4px solid #28a745;
+  padding-left: calc(1rem - 4px);
+  background: linear-gradient(90deg, rgba(40, 167, 69, 0.1), transparent);
+}
+
+/* ============================================
+   6. INDIVIDUAL COLUMN STYLES
+   ============================================ */
+
+/* Status Column */
+.problem-list-status-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.solved-icon {
+  color: #28a745;
+}
+
+.unsolved-icon {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #6c757d;
+  border-radius: 50%;
+  opacity: 0.5;
+}
+
+/* Title Column */
+.problem-list-title-col {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.problem-title-link {
+  color: #ffffff;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  line-height: 1.4;
+}
+
+.problem-title-link:hover {
+  color: #4d96ff;
+  text-decoration: underline;
+}
+
+.external-link-icon {
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+}
+
+.problem-title-link:hover .external-link-icon {
+  opacity: 1;
+}
+
+.problem-id {
+  font-size: 0.75rem;
+  color: #718096;
+  font-weight: 400;
+}
+
+/* Platform Badge */
+.platform-badge {
+  font-size: 0.75rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 6px;
+  font-weight: 700;
+  white-space: nowrap;
+  display: inline-block;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.platform-codeforces {
+  background: linear-gradient(135deg, #1f8dd6, #1976d2);
+  color: white;
+}
+
+.platform-leetcode {
+  background: linear-gradient(135deg, #ffa116, #ff6f00);
+  color: white;
+}
+
+.platform-atcoder {
+  background: linear-gradient(135deg, #3f7cac, #2c5f8a);
+  color: white;
+}
+
+.platform-geeksforgeeks {
+  background: linear-gradient(135deg, #0f7b0f, #0a5d0a);
+  color: white;
+}
+
+.platform-hackerrank {
+  background: linear-gradient(135deg, #00b74a, #009639);
+  color: white;
+}
+
+.platform-codechef {
+  background: linear-gradient(135deg, #5b4638, #3d2e26);
+  color: white;
+}
+
+.platform-hackerearth {
+  background: linear-gradient(135deg, #323754, #252840);
+  color: white;
+}
+
+.platform-spoj {
+  background: linear-gradient(135deg, #345, #234);
+  color: white;
+}
+
+.platform-topcoder {
+  background: linear-gradient(135deg, #29a8df, #1e88c7);
+  color: white;
+}
+
+/* Difficulty Badges */
+.difficulty-badge {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+/* Difficulty Colors */
+.difficulty-easy { 
+  background: linear-gradient(135deg, #28a745, #20c997);
+  color: white;
+}
+
+.difficulty-medium { 
+  background: linear-gradient(135deg, #ffc107, #fd7e14);
+  color: #000;
+}
+
+.difficulty-hard { 
+  background: linear-gradient(135deg, #dc3545, #c82333);
+  color: white;
+}
+
+.difficulty-unknown { 
+  background: linear-gradient(135deg, #6c757d, #5a6268);
+  color: white;
+}
+
+/* Tags Column */
+.problem-list-tags-col .tags-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  align-items: center;
+}
+
+.tag-badge {
+  background-color: #4a5568;
+  color: #e0e0e0;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.75rem;
+  font-weight: 500;
+  white-space: nowrap;
+}
+
+.tag-badge.more-tags {
+  background-color: #6c757d;
+  font-style: italic;
+}
+
+/* Actions Column */
+.problem-list-actions-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.problem-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.action-btn {
+  background: none;
+  border: 2px solid transparent;
+  color: #a0a0c0;
+  cursor: pointer;
+  padding: 0.5rem;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 36px;
+  min-height: 36px;
+}
+
+.action-btn:hover {
+  color: #ffffff;
+  background-color: #3a3a5a;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.solve-btn:hover {
+  color: #28a745;
+  background-color: rgba(40, 167, 69, 0.1);
+  border-color: #28a745;
+}
+
+.favorite-btn:hover {
+  color: #ffc107;
+  background-color: rgba(255, 193, 7, 0.1);
+  border-color: #ffc107;
+}
+
+.favorite-btn.favorited {
+  color: #ffc107;
+  background-color: rgba(255, 193, 7, 0.1);
+  border-color: #ffc107;
+}
+
+.star-filled {
+  fill: currentColor;
+}
+
+/* ============================================
+   7. PAGINATION CONTROLS
+   ============================================ */
+
+.pagination-controls {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background-color: #23233c;
+  border-radius: 12px;
+  border: 1px solid #3a3a5a;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.pagination-info {
+  color: #a0a0c0;
+  font-weight: 500;
+  font-size: 0.9rem;
+}
+
+.pagination-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.pagination-btn {
+  background: linear-gradient(135deg, #4a5568, #2d3748);
+  color: white;
+  border: none;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  min-width: 44px;
+  justify-content: center;
+}
+
+.pagination-btn:hover:not(:disabled):not(.dots) {
+  background: linear-gradient(135deg, #2d3748, #1a1a2e);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.pagination-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.pagination-btn.active {
+  background: linear-gradient(135deg, #007bff, #0056b3);
+  box-shadow: 0 4px 8px rgba(0, 123, 255, 0.3);
+}
+
+.pagination-btn.dots {
+  background: transparent;
+  cursor: default;
+  padding: 0.75rem 0.5rem;
+}
+
+.pagination-btn.dots:hover {
+  background: transparent;
+  transform: none;
+  box-shadow: none;
+}
+
+/* ============================================
+   8. RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 1024px) {
+  .problem-list-row {
+    grid-template-columns: 50px minmax(200px, 2fr) 0.8fr 0.8fr minmax(150px, 1fr) 100px;
+    gap: 0.75rem;
+  }
+  
+  .filter-row {
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .problem-list-page {
+    padding: 1rem;
+  }
+  
+  .problem-list-header {
+    flex-direction: column;
+    gap: 1rem;
+    text-align: center;
+  }
+  
+  .problem-list-header h1 {
+    font-size: 1.5rem;
+  }
+  
+  .problem-count-info {
+    display: block;
+    margin-left: 0;
+    margin-top: 0.5rem;
+  }
+  
+  .header-actions {
+    flex-direction: column;
+    width: 100%;
+    gap: 0.5rem;
+  }
+  
+  .filters-container {
+    padding: 1.5rem;
+  }
+  
+  .filter-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .filter-group.search-filter,
+  .tags-filter {
+    grid-column: span 1;
+  }
+  
+  .problem-list-row {
+    grid-template-columns: 40px 1fr 80px;
+    gap: 0.5rem;
+    padding: 0.75rem;
+  }
+  
+  .problem-list-platform-col,
+  .problem-list-difficulty-col,
+  .problem-list-tags-col {
+    display: none;
+  }
+  
+  .problem-list-actions-col {
+    justify-content: center;
+  }
+  
+  .pagination-controls {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .pagination-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .problem-list-header h1 {
+    font-size: 1.25rem;
+  }
+  
+  .toggle-filters-btn,
+  .clear-filters-btn {
+    padding: 0.5rem 1rem;
+    font-size: 0.8rem;
+  }
+  
+  .filters-container {
+    padding: 1rem;
+  }
+  
+  .problem-list-row {
+    grid-template-columns: 35px 1fr 70px;
+    padding: 0.5rem;
+  }
+  
+  .problem-title-link {
+    font-size: 0.9rem;
+  }
+  
+  .pagination-btn {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.8rem;
+  }
+}
