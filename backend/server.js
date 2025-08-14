@@ -3,6 +3,7 @@ require('dotenv').config();
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const path = require('path');
 
 // Import routes
 const authRoutes = require('./routes/authRoutes');
@@ -46,6 +47,15 @@ app.use('/api/dashboard', dashboardRoutes);
 app.use('/api/favorites', favoritesRoutes);
 app.use('/api/problem-list', problemListRoutes);
 app.use('/api/sync', require('./routes/syncRoutes'));
+
+// Serve static files from the 'public' directory
+app.use(express.static(path.join(__dirname, 'public')));
+
+// For any route not handled by your API, serve index.html (React SPA fallback)
+app.get(/.*/, (req, res) => {
+  res.sendFile(path.join(__dirname, 'public', 'index.html'));
+});
+
 
 // Error handling middleware
 app.use((err, req, res, next) => {
